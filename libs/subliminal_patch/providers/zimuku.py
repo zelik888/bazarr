@@ -285,10 +285,10 @@ def _get_subtitle_from_archive(archive):
         if "简体" in subname or "chs" in subname or ".gb." in subname:
             score += 2
         if "繁体" in subname or "cht" in subname or ".big5." in subname:
-            pass
-        if "chs.eng" in subname or "chs&eng" in subname:
             score += 2
-        if "中英" in subname or "简英" in subname or "双语" in subname or "简体&英文" in subname:
+        if "chs.eng" in subname or "chs&eng" in subname or "cht" in subname or "cht&eng" in subname:
+            score += 2
+        if "中英" in subname or "简英" in subname or "双语" in subname or "简体&英文" in subname or "繁英" in subname or "雙語" in subname or "繁體&英文" in subname:
             score += 4
         logger.debug("subtitle {}, score: {}".format(subname, score))
         if score > max_score:
